@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  src: url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+}
+
+:root {
+  --nabu-bg: #0f1117;
+  --nabu-surface: #1a1d27;
+  --nabu-surface-2: #232733;
+  --nabu-border: #2e3345;
+  --nabu-text: #e4e6ef;
+  --nabu-dim: #8b8fa7;
+  --nabu-accent: #6c5ce7;
+  --nabu-accent-2: #a29bfe;
+  --nabu-green: #00b894;
+  --nabu-red: #e17055;
+  --nabu-orange: #fdcb6e;
+  --nabu-blue: #74b9ff;
+}
+
+body {
+  background-color: var(--nabu-bg);
+  color: var(--nabu-text);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--nabu-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--nabu-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--nabu-dim);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--nabu-accent);
+  color: white;
+}
+
+/* Focus styles */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--nabu-bg), 0 0 0 4px var(--nabu-accent);
+}
+
+button:focus-visible,
+a:focus-visible,
+[role="button"]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--nabu-bg), 0 0 0 4px var(--nabu-orange);
+}
+
+/* Smooth transitions */
+*,
+*::before,
+*::after {
+  transition-property: color, background-color, border-color, box-shadow, opacity, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Disable transitions for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0ms !important;
+    animation-duration: 0ms !important;
+  }
+}
